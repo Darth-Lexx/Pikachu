@@ -73,39 +73,6 @@ namespace Pikachu
             /// </summary>
             public class pribor
             {
-#pragma warning disable CS8618
-                /// <summary>Тип прибора в числовом представлении</summary>
-                string tip;
-                /// <summary>Номер прибора в числовом представлении</summary>
-                string num;
-                /// <summary>Исполнение прибора в числовом представлении</summary>
-                string exp;
-                /// <summary>Модификация прибора в числовом представлении</summary>
-                string mod;
-#pragma warning restore CS8618
-                /// <summary>
-                /// Устанавливает числовые представления полей pribor_tip/num/exp/mod
-                /// </summary>
-                /// <param name="a">Поле pribor_tip</param>
-                /// <param name="b">Поле pribor_num</param>
-                /// <param name="c">Поле pribor_exp</param>
-                /// <param name="d">Поле pribor_mod</param>
-               /* public void SetIndex(string a, string b, string c, string d)
-                {
-                    tip = a;
-                    num = b;
-                    exp = c;
-                    mod = d;
-                }
-                /// <summary>
-                /// Возвращает список индексов pribor_tip/num/exp/mod
-                /// </summary>
-                /// <returns></returns>
-                public List<string> GetIndex()
-                {
-                    List<string> l = new List<string> { tip, num, exp, mod };
-                    return l;
-                }*/
                 /// <summary>
                 /// Тип прибора (соответсвует столбцу title таблицы pribor)
                 /// </summary>
