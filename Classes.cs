@@ -602,7 +602,7 @@ namespace Pikachu
             public pribor GetPribor(int index)
             {
                 if (index < 0) throw new DB_DataException("Индекс не может быть отрицательным");
-                return (pribors[index]);
+                return pribors[index];
             }
 
             ///<summary>Очистка сохраненных в классе приборов</summary>
