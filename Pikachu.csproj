@@ -11,9 +11,9 @@
 
   <ItemGroup>
     <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
-    <PackageReference Include="MaterialDesignColors" Version="2.1.0-ci364" />
-    <PackageReference Include="MaterialDesignThemes" Version="4.7.0-ci364" />
-    <PackageReference Include="Npgsql" Version="7.0.0" />
+    <PackageReference Include="MaterialDesignColors" Version="2.1.2" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.8.0" />
+    <PackageReference Include="Npgsql" Version="7.0.2" />
   </ItemGroup>
 
   <ItemGroup>

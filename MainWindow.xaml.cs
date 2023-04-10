@@ -13,6 +13,7 @@
     using System.Windows.Documents;
     using System.Windows.Input;
     using System.Windows.Media;
+    using static Pikachu.MainWindow.DB_Data;
 #pragma warning disable CS1591
     public partial class MainWindow : Window
     {
@@ -326,6 +327,7 @@
                     reader.Close();
                     iQuery.Dispose();
                     DetailWindow detail = new(db.GetArchive(pr, date, name, status, note, lenght));
+                    detail.Title = $"{db.FindTitle("pribor", pr[0])} {db.FindTitle("modify", pr[3])} \nНомер:{pr[1]}"; // { tip, num, exp, mod };
                     detail.Show();
                 }
 
@@ -345,6 +347,14 @@
         private void Minimized(object sender, RoutedEventArgs e)
         {
             WindowState = WindowState.Minimized;
+        }
+
+        private void ListView_pribors_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Debug.WriteLine($"Selected item {ListView_pribors.SelectedIndex}");
+            pribor pr = db.GetPribor(ListView_pribors.SelectedIndex);
+            Debug.WriteLine($"Pribor {pr.pribor_tip}");
+            e.Handled = true;
         }
     }
 }

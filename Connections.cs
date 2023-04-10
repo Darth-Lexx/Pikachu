@@ -158,6 +158,7 @@ namespace Pikachu
             date_ktx.DisplayDateEnd = DateTime.Now.Date;
             date_out.SelectedDate = DateTime.Now.Date;
             date_out.DisplayDateEnd = DateTime.Now.Date;
+            MainWindow1.Title = $"СУБД Pikachu  \nПользователь {login_text.Text}  \nВерсия: бесполезная";
             lock (locker_DB)
             {
                 combo_pribors.ItemsSource = db.GetData("pribor");

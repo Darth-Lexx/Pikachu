@@ -13,6 +13,7 @@ namespace Pikachu
         {
             InitializeComponent();
             mainWindow = window;
+            Title = "Авторизация СУБД Pikachu";
 #if DEBUG
             LoginBox.Text = "XYZ";
             PassBox.Password = "1";
