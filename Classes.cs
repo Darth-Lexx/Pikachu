@@ -192,7 +192,7 @@ namespace Pikachu
                 /// <summary>
                 /// Список дат
                 /// </summary>
-                public DateTime date { get; set; }
+                public string date { get; set; }
                 /// <summary>
                 /// Список статусов
                 /// </summary>
@@ -578,7 +578,7 @@ namespace Pikachu
                         pribor_num = pribor[1],
                         pribor_exp = exp[int.Parse(pribor[2])],
                         pribor_mod = FindTitle("modify", pribor[3]),
-                        date = date[i],
+                        date = date[i].ToShortDateString(),
                         name = GetName(name[i]),
                         note = note[i],
                         status = FindTitle("status", status[i]),

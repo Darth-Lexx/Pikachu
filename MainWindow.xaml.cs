@@ -354,7 +354,46 @@
             Debug.WriteLine($"Selected item {ListView_pribors.SelectedIndex}");
             pribor pr = db.GetPribor(ListView_pribors.SelectedIndex);
             Debug.WriteLine($"Pribor {pr.pribor_tip}");
-            e.Handled = true;
+            if (pr.date_snu is null)
+            {
+                date_snu.SelectedDate = null;
+                date_snu.DisplayDateEnd = null;
+            } else
+            {
+                date_snu.SelectedDate = Convert.ToDateTime(pr.date_snu);
+                date_snu.DisplayDateEnd = Convert.ToDateTime(pr.date_snu);
+            }
+            if (pr.date_oki is null)
+            {
+                date_oki.SelectedDate = null;
+                date_oki.DisplayDateEnd = null;
+            }
+            else
+            {
+                date_oki.SelectedDate = Convert.ToDateTime(pr.date_oki);
+                date_oki.DisplayDateEnd = Convert.ToDateTime(pr.date_oki);
+            }
+            if (pr.date_ktx is null)
+            {
+                date_ktx.SelectedDate = null;
+                date_ktx.DisplayDateEnd = null;
+            }
+            else
+            {
+                date_ktx.SelectedDate = Convert.ToDateTime(pr.date_ktx);
+                date_ktx.DisplayDateEnd = Convert.ToDateTime(pr.date_ktx);
+            }
+            if (pr.date_out is null)
+            {
+                date_out.SelectedDate = null;
+                date_out.DisplayDateEnd = null;
+            }
+            else
+            {
+                date_out.SelectedDate = Convert.ToDateTime(pr.date_out);
+                date_out.DisplayDateEnd = Convert.ToDateTime(pr.date_out);
+            }
+           e.Handled = true;
         }
     }
 }

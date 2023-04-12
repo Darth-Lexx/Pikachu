@@ -150,14 +150,14 @@ namespace Pikachu
             read_others("sensor");
             read_others("status");
             db.SetStatuses();
-            date_snu.SelectedDate = DateTime.Now.Date;
-            date_snu.DisplayDateEnd = DateTime.Now.Date;
-            date_oki.SelectedDate = DateTime.Now.Date;
-            date_oki.DisplayDateEnd = DateTime.Now.Date;
-            date_ktx.SelectedDate = DateTime.Now.Date;
-            date_ktx.DisplayDateEnd = DateTime.Now.Date;
-            date_out.SelectedDate = DateTime.Now.Date;
-            date_out.DisplayDateEnd = DateTime.Now.Date;
+            /* date_snu.SelectedDate = DateTime.Now.Date;
+             date_snu.DisplayDateEnd = DateTime.Now.Date;
+             date_oki.SelectedDate = DateTime.Now.Date;
+             date_oki.DisplayDateEnd = DateTime.Now.Date;
+             date_ktx.SelectedDate = DateTime.Now.Date;
+             date_ktx.DisplayDateEnd = DateTime.Now.Date;
+             date_out.SelectedDate = DateTime.Now.Date;
+             date_out.DisplayDateEnd = DateTime.Now.Date;*/
             MainWindow1.Title = $"СУБД Pikachu  \nПользователь {login_text.Text}  \nВерсия: бесполезная";
             lock (locker_DB)
             {
@@ -215,7 +215,7 @@ namespace Pikachu
                             {
                                 while (reader.Read())
                                 {
-                                    List<string> pribor = new()
+                                    List<string?> pribor = new()
                                     {
                                         reader.GetInt32(0).ToString(),
                                         reader.GetInt32(1).ToString(),
@@ -226,15 +226,15 @@ namespace Pikachu
                                         reader.GetInt32(6).ToString(),
                                         reader.GetInt32(7).ToString(),
                                         reader.GetInt32(8).ToString(),
-                                        reader.GetDateTime(9).ToString(),
+                                        reader.GetDateTime(9).ToShortDateString(),
                                         reader.GetInt32(10).ToString(),
                                         reader.GetInt32(11).ToString(),
                                         reader.GetString(12)
                                     };
-                                    if (reader.IsDBNull(13)) { pribor.Add(""); } else { pribor.Add(reader.GetDateTime(13).ToString()); }
-                                    if (reader.IsDBNull(14)) { pribor.Add(""); } else { pribor.Add(reader.GetDateTime(14).ToString()); }
-                                    if (reader.IsDBNull(15)) { pribor.Add(""); } else { pribor.Add(reader.GetDateTime(15).ToString()); }
-                                    if (reader.IsDBNull(16)) { pribor.Add(""); } else { pribor.Add(reader.GetDateTime(16).ToString()); }
+                                    if (reader.IsDBNull(13)) { pribor.Add(null); } else { pribor.Add(reader.GetDateTime(13).ToShortDateString()); }
+                                    if (reader.IsDBNull(14)) { pribor.Add(null); } else { pribor.Add(reader.GetDateTime(14).ToShortDateString()); }
+                                    if (reader.IsDBNull(15)) { pribor.Add(null); } else { pribor.Add(reader.GetDateTime(15).ToShortDateString()); }
+                                    if (reader.IsDBNull(16)) { pribor.Add(null); } else { pribor.Add(reader.GetDateTime(16).ToShortDateString()); }
                                     pribor.Add(reader.GetInt32(17).ToString());
                                     pribor.Add(reader.GetInt32(18).ToString());
                                     pribor.Add(reader.GetInt32(19).ToString());
